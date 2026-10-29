@@ -1,0 +1,26 @@
+
+body {
+  margin: 0;
+  display: block;
+  background: #f6f4ff;
+  color: #222222;
+  font-family: system-ui, sans-serif;
+}
+
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.page h1 {
+  font-size: 36px;
+  line-height: 1.2;
+}
+
