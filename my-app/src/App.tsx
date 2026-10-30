@@ -1,15 +1,21 @@
 import "./App.css";
-
-const profile = {
-  name: "게으른 완벽주의자",
-  description: "일정을 관리하는 앱입니다",
-};
+import ProductCard from "./components/ProductCard";
 
 export default function App() {
-  return (
-    <main className="page">
-      <h1>{profile.name}</h1>
-      <p>{profile.description}</p>
-    </main>
-  );
+
+ return (
+
+  <main className="page">
+
+   <h1>나의 쇼핑몰</h1>
+
+   <p>첫 번째 React 화면입니다.</p>
+
+   <ProductCard />
+   <ProductCard />
+
+  </main>
+
+ );
+
 }

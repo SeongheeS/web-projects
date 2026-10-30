@@ -1,26 +1,128 @@
-
-body {
-  margin: 0;
-  display: block;
-  background: #f6f4ff;
-  color: #222222;
-  font-family: system-ui, sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-
+ 
+html:root {
+  font-family: Arial, 'Malgun Gothic', sans-serif;
+  color: #18212b;
+  background: #e9edf0;
+  color-scheme: light;
+}
+ 
+html body {
+  display: block;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #18212b;
+  background: #e9edf0;
+  font-family: Arial, 'Malgun Gothic', sans-serif;
+  line-height: 1.5;
+}
+ 
 #root {
+  width: 100%;
   max-width: none;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  text-align: left;
 }
-
-.page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 64px 24px;
+ 
+button,
+input {
+  font: inherit;
 }
-
-.page h1 {
-  font-size: 36px;
+ 
+button {
+  cursor: pointer;
+}
+ 
+/* 2. Header: 로고, 검색창, 장바구니를 가로로 배치합니다. */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 32px;
+  color: #ffffff;
+  background: #131921;
+}
+ 
+.site-header .logo {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
   line-height: 1.2;
 }
-
+ 
+.search {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  max-width: 760px;
+}
+ 
+.search input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 6px 0 0 6px;
+  color: #18212b;
+  background: #ffffff;
+}
+ 
+.search button {
+  flex-shrink: 0;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 0 6px 6px 0;
+  color: #18212b;
+  background: #febd69;
+  white-space: nowrap;
+}
+ 
+.search button:hover {
+  background: #f3a847;
+}
+ 
+.site-header > span {
+  margin-left: auto;
+  white-space: nowrap;
+}
+ 
+/* 3. 본문: 콘텐츠의 최대 너비와 여백을 설정합니다. */
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 34px 24px 48px;
+}
+ 
+.page > h1 {
+  margin: 0 0 28px;
+  font-size: 30px;
+  line-height: 1.4;
+}
+ 
+/* 4. 상품 목록: 넓은 화면에서는 같은 너비의 두 열을 만듭니다. */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+ 
+/* 5. ProductCard: 이미지, 상품명, 가격, 버튼을 꾸밉니다. */
+.product-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  background: #ffffff;
+}
