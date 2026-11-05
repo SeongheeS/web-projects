@@ -6,11 +6,11 @@ export default function Header() {
             <strong className="logo">amazon</strong>
             <div className="search">
 
-                <input aria-label="상품 검색" placeholder="상품 검색" />
-                <button type="button">검색</button>
+                <input aria-label="Search Amazon" placeholder="Search Amazon" />
+                <button type="button">Search</button>
 
             </div>
-            <span>장바구니 0</span>
+            <span>Cart 0</span>
 
         </header>
   );

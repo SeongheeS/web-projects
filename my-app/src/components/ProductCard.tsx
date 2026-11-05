@@ -12,8 +12,8 @@ export default function ProductCard({ title, price, image }) {
       <img src={image} alt={title} />
       <h2>{title}</h2>
       <p className="price">${price.toFixed(2)}</p>
-      {/* '원'으로 표시하려면 {price.toLocaleString()}원 `*/}
-      <button type="button">장바구니 담기</button>
+      {/* 원화 표시: <p className="price">{price.toLocaleString()}원</p> */}
+      <button type="button">Add to Cart</button>
     </article>
  );
             
