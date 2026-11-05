@@ -126,3 +126,10 @@ button {
   border-radius: 8px;
   background: #ffffff;
 }
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}

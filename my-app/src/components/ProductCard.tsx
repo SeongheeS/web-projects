@@ -1,23 +1,20 @@
-export default function ProductCard() {
-
+// 상품명 & 가격 직접 지정
+/* export default function ProductCard() {
   const title = '무선 헤드폰';
-
   const price = 59000;
+//*/
+
+
+export default function ProductCard({ title, price, image }) {
 
   return (
-
     <article className="product-card">
-
-        <img src="./public/headphones1.webp" alt={title} />
-
-        <h2>{title}</h2>
-
-        <p className="price">{price}원</p>
-
-        <button type="button">장바구니 담기</button>
-
+      <img src={image} alt={title} />
+      <h2>{title}</h2>
+      <p className="price">${price.toFixed(2)}</p>
+      {/* '원'으로 표시하려면 {price.toLocaleString()}원 `*/}
+      <button type="button">장바구니 담기</button>
     </article>
-
  );
             
 }
