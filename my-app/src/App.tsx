@@ -17,6 +17,23 @@ export default function App() {
 
     const [cart, setCart] = useState<CartItem[]>([]); // [] <- 처음에는 장바구니 비어 있음
 
+    function handleAddToCart(product: Product) {
+        if (!product.inStock) return;
+        setCart((prev) => {
+            const existingItem = prev.find(
+                (item) => item.product.id === product.id
+            );
+            if (existingItem) {
+                return prev.map((item) =>
+                    item.product.id === product.id
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
+                );
+            }
+            return [...prev, { product, quantity: 1 }];
+        });
+    }
+
     return (
         <>
             <Header onSearch={setSearchTerm} />
