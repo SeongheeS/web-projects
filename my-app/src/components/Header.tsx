@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react';
+import type { CartItem } from '../types/cart';
 
 
 type HeaderProps = {
     onSearch: (keyword: string) => void;
+    cart: CartItem[];
+    cartCount: number;
+    cartTotal: number;
+    
 }
 
 
 export default function Header({ onSearch }: HeaderProps) {
     const [query, setQuery] = useState('');
+    const [isCartOpen, setIsCartOpen] = useState(false); // 처음엔 장바구니 닫혀 있음
 
     return (
         <header className="site-header">
@@ -27,7 +33,18 @@ export default function Header({ onSearch }: HeaderProps) {
                 <button type="submit">Search</button>
 
             </form>
-            <span>Cart 0</span>
+
+            <div className="cart-area">
+                <button type="button" className="cart-toggle"
+                    aria-expanded={isCartOpen}
+                    aria-controls="cart-panel"
+                    onClick={() => setIsCartOpen((prev) => !prev)}>
+                    Cart <span>{cartCount}</span>
+                </button>
+                {isCartOpen &&
+                    <cartPanel items={cart} total={cartTotal} />
+                }
+            </div>
 
         </header>
   );
