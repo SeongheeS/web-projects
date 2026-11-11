@@ -1,18 +1,16 @@
-// 상품명 & 가격 직접 지정
-/* export default function ProductCard() {
-  const title = '무선 헤드폰';
-  const price = 59000;
-//*/
+import type { Product } from '../data/products';
 
 
 type ProductCardProps = {
-  title: string;
-  price: number;
-  imageUrl: string;
-  inStock: boolean;
+  product: Product;
+  onAddToCart: (product: Product) => void;
 };
 
-export default function ProductCard({ title, price, imageUrl, inStock }:  ProductCardProps) {
+
+export default function ProductCard({
+  product, onAddToCart,
+}: ProductCardProps) {
+  const { title, price, imageUrl, inStock } = product; // 기존 return과 카드 JSX를 이 위치에 유지
 
   return (
     <article className="product-card">
