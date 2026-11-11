@@ -1,10 +1,10 @@
 import "./App.css";
 import Header from './components/Header';
-import ProductCard from "./components/ProductCard";
-import { products } from "./data/products";
-import { useState } from "react";
-import type { CartItem } from "./types/cart";
-import type { Product } from "./data/products";
+import ProductCard from './components/ProductCard';
+import { products } from './data/products';
+import { useState } from 'react';
+import type { CartItem } from './types/cart';
+import type { Product } from './data/products';
 
 
 export default function App() {
@@ -34,6 +34,17 @@ export default function App() {
         });
     }
 
+    const cartCount = cart.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
+
+    const cartTotal = cart.reduce(
+        (sum, item) =>
+            sum + item.product.price * item.quantity,
+        0
+    );
+    
     return (
         <>
             <Header onSearch={setSearchTerm} />
@@ -49,10 +60,8 @@ export default function App() {
                         {visibleProducts.map((product) => (
                             <ProductCard
                                 key={product.id}
-                                title={product.title}
-                                price={product.price}
-                                imageUrl={product.imageUrl}
-                                inStock={product.inStock}
+                                product={product}
+                                onAddToCart={handleAddToCart}
                             />
                         ))}
                     </section>
