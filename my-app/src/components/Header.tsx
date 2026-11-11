@@ -6,7 +6,10 @@ export default function Header() {
             <strong className="logo">amazon</strong>
             <div className="search">
 
-                <input aria-label="Search Amazon" placeholder="Search Amazon" />
+                <input
+                    aria-label="Search Amazon"
+                    placeholder="Search Amazon"
+                />
                 <button type="button">Search</button>
 
             </div>
