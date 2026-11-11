@@ -18,7 +18,16 @@ export default function CartPanel(
                 <>
                     <ul className="cart-items">
                         {items.map((item) => (
-                            // li JSX를 여기에 작성
+                            <li key={item.product.id}>
+                                <img src={item.product.imageUrl} alt="" />
+                                <div>
+                                    <h3>{item.product.title}</h3>
+                                    <p>Quantity: {item.quantity}</p>
+                                    <strong>
+                                        ${(item.product.price * item.quantity).toLocaleString('en-US')} {/* {...(ko-KR)}원 */}
+                                    </strong>
+                                </div>
+                            </li>
                         ))}
                     </ul>
                     <p>Total: ${total.toFixed(2)}</p> {/* 전체 합계는 App에서 계산한 total */}
