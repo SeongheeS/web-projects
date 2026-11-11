@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import type { CartItem } from '../types/cart';
+import CartPanel from './CartPanel';
 
 
 type HeaderProps = {
     onSearch: (keyword: string) => void;
-    cart: CartItem[];
+    cart: CartItem[];S
     cartCount: number;
     cartTotal: number;
     
 }
 
 
-export default function Header({ onSearch }: HeaderProps) {
+export default function Header({ onSearch, cart, cartCount, cartTotal }: HeaderProps) {
     const [query, setQuery] = useState('');
     const [isCartOpen, setIsCartOpen] = useState(false); // 처음엔 장바구니 닫혀 있음
 
@@ -42,7 +43,7 @@ export default function Header({ onSearch }: HeaderProps) {
                     Cart <span>{cartCount}</span>
                 </button>
                 {isCartOpen &&
-                    <cartPanel items={cart} total={cartTotal} />
+                    <CartPanel items={cart} total={cartTotal} />
                 }
             </div>
 

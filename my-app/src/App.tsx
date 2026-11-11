@@ -54,7 +54,9 @@ export default function App() {
                 cartTotal={cartTotal}
             />
             <main className="page">
-                <h1>Keep shopping for</h1>
+                {visibleProducts.length > 0 && (
+                    <h1>Keep shopping for</h1> {/* 검색 결과가 있을 때만 표시 */}
+                )}
 
                 {visibleProducts.length === 0 ? (
                     <p className="empty-message">
