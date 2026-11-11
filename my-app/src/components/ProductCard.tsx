@@ -4,7 +4,6 @@
   const price = 59000;
 //*/
 
-import type { Product } from "../data/products"; 
 
 type ProductCardProps = {
   title: string;
@@ -20,13 +19,14 @@ export default function ProductCard({ title, price, imageUrl, inStock }:  Produc
       <img src={imageUrl} alt={title} />
       <div className="product-info">
         <h2>{title}</h2>
-        <p className="price">${price.toLocaleString('en-US')}</p>
-        {/* 원화 표시: <p className="price">{price.toLocaleString()}원</p> */}
+        <p className="price">
+          ${price.toLocaleString('en-US')} {/* 원화 표시: <p className="price">{price.toLocaleString()}원</p> */}
+        </p>
         <p>
           {inStock ? 'In Stock' : 'Out of Stock'}
         </p>
-        <button disabled={!inStock}>
-        {inStock ? 'Add to Cart' : 'Out of Stock'}
+        <button className="add-button" disabled={!inStock}>
+          {inStock ? 'Add to Cart' : 'Out of Stock'}
         </button>
       </div>
     </article>
