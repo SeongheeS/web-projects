@@ -23,7 +23,9 @@ export default function ProductCard({
         <p>
           {inStock ? 'In Stock' : 'Out of Stock'}
         </p>
-        <button className="add-button" disabled={!inStock}>
+        <button className="add-button" disabled={!inStock}
+          type="button"
+          onClick={() => onAddToCart(product)}> {/* 클릭할 때만 onAddToCart(product) 실행 */}
           {inStock ? 'Add to Cart' : 'Out of Stock'}
         </button>
       </div>
