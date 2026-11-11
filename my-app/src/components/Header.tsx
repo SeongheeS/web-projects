@@ -1,4 +1,9 @@
+import { useState } from "react";
+
+
+
 export default function Header() {
+    const [query, setQuery] = useState('');
 
     return (
         <header className="site-header">
@@ -9,6 +14,8 @@ export default function Header() {
                 <input
                     aria-label="Search Amazon"
                     placeholder="Search Amazon"
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
                 />
                 <button type="button">Search</button>
 
