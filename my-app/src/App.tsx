@@ -15,7 +15,7 @@ export default function App() {
 
     return (
         <>
-            <Header searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+            <Header onSearch={setSearchTerm} />
             <main className="page">
                 <h1>Keep shopping for</h1>
                 <div className="product-grid">

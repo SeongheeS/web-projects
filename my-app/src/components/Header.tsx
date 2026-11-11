@@ -1,8 +1,12 @@
 import { useState } from "react";
 
 
+type HeaderProps = {
+    onSearch: (keyword: string) => void;
+}
 
-export default function Header() {
+
+export default function Header({ onSearch }: HeaderProps) {
     const [query, setQuery] = useState('');
 
     return (
