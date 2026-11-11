@@ -44,10 +44,15 @@ export default function App() {
             sum + item.product.price * item.quantity,
         0
     );
-    
+
     return (
         <>
-            <Header onSearch={setSearchTerm} />
+            <Header
+                onSearch={setSearchTerm}
+                cart={cart}
+                cartCount={cartCount}
+                cartTotal={cartTotal}
+            />
             <main className="page">
                 <h1>Keep shopping for</h1>
 
