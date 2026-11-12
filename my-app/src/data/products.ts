@@ -24,8 +24,8 @@ export const products: Product[] = [
     {
         id: 3,
         title: "Wireless Mouse",
-        price: 49.99,
-        imageUrl: "/mouse.webp",
+        price: 109.99,
+        imageUrl: "/mouse.jpg",
         inStock: false,
     }
 ];

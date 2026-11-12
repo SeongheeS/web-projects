@@ -20,7 +20,8 @@ export default function ProductCard({
         <p className="price">
           ${price.toLocaleString('en-US')} {/* 원화 표시: <p className="price">{price.toLocaleString()}원</p> */}
         </p>
-        <p>
+        {/* 재고 여부에 따른 글씨 색상 변경을 위한 서로 다른 CSS 클래스 지정 */}
+        <p className={inStock ? 'in-stock' : 'out-of-stock'}>
           {inStock ? 'In Stock' : 'Out of Stock'}
         </p>
         <button className="add-button" disabled={!inStock}

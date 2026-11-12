@@ -153,3 +153,12 @@ button {
 .product-card button:hover {
   background-color: #f7ca00;
 }
+
+.product-card .in-stock {
+  color: green;
+}
+
+.product-card .out-of-stock {
+  color: rgb(200, 0, 0);
+}
+

@@ -54,13 +54,15 @@ export default function App() {
                 cartTotal={cartTotal}
             />
             <main className="page">
+                {/* 검색 결과가 있을 때만 표시 */}
                 {visibleProducts.length > 0 && (
-                    <h1>Keep shopping for</h1> {/* 검색 결과가 있을 때만 표시 */}
+                    <h1>Keep shopping for</h1>
                 )}
-
+                
+                {/* 상품이 없으면 안내 문구 표시 */}
                 {visibleProducts.length === 0 ? (
                     <p className="empty-message">
-                        No products found. {/* 상품이 없으면 안내 문구 표시 */}
+                        No products found. 
                     </p>
                 ) : (
                     <section className="product-grid">
