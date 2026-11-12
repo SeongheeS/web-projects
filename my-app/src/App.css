@@ -112,10 +112,10 @@ button {
   line-height: 1.4;
 }
  
-/* 4. 상품 목록: 넓은 화면에서는 같은 너비의 두 열을 만듭니다. */
+/* 4. 상품 목록: 넓은 화면에서는 같은 너비의 세 열을 만듭니다. */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
  
@@ -131,7 +131,8 @@ button {
 .product-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 350px;
+  object-fit: contain;
   margin-bottom: 16px;
 }
 
@@ -141,17 +142,41 @@ button {
 }
 
 .product-card button {
+  display: block;
+  width: 100%;
   background-color: #fed814;
   color: #0f1111;
   border: none;
   border-radius: 20px;
   padding: 10px 20px;
   font-size: 16px;
+  text-align: center;
   cursor: pointer;
 }
 
 .product-card button:hover {
   background-color: #f7ca00;
+}
+
+.product-card button:disabled {
+  background-color: #d5d9d9;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+/* 장바구니를 헤더 오른쪽 끝에 배치 */
+.cart-area {
+  margin-left: auto;
+}
+
+/* 장바구니 버튼의 배경과 테두리를 제거하고 흰색 글씨로 표시 */
+.cart-toggle {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
 }
 
 .product-card .in-stock {
@@ -161,4 +186,3 @@ button {
 .product-card .out-of-stock {
   color: rgb(200, 0, 0);
 }
-
