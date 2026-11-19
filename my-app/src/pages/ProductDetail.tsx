@@ -35,6 +35,15 @@ export default function ProductDetail({
                         ${product.price.toLocaleString()}
                     </p>
                     {/* 다음 Step의 Add to Cart 버튼 추가 */}
+                    <p>{product.inStock ? "In Stock" : "Out of Stock"}</p>
+                    <button
+                        className="add-button"
+                        type="button"
+                        disabled={!product.inStock}
+                        onClick={() => onAddToCart(product)}
+                    >
+                        {product.inStock ? "Add to Cart" : "Out of Stock"}
+                    </button>
                 </div>
             </article>
         </main>
