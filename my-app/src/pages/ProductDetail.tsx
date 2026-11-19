@@ -17,10 +17,26 @@ export default function ProductDetail({
         return (
             <main className="page">
                 <h1>Product not found.</h1>
-                <Link to="/">Back to Products List</Link>
+                <Link to="/">Back to Product List</Link>
             </main>
         );
     }
     // 아래에는 product가 있는 경우에만 진행
-    // 다음 Step의 상세화면 return 작성
+    return (
+        <main className="page">
+            <Link to="/">Back to Product List</Link>
+            <article className="product-detail">
+                <img className="detail-image"
+                    src={product.imageUrl} alt={product.title} />
+                <div className="detail-content">
+                    <h1>{product.title}</h1>
+                    <p>{product.description}</p>
+                    <p className="price">
+                        ${product.price.toLocaleString()}
+                    </p>
+                    {/* 다음 Step의 Add to Cart 버튼 추가 */}
+                </div>
+            </article>
+        </main>
+    );
 }
