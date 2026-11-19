@@ -13,5 +13,14 @@ export default function ProductDetail({
     const product = products.find(
         (item) => String(item.id) === productId
     );
-    // 아래에 다음 두 Step 코드 작성
+    if (!product){
+        return (
+            <main className="page">
+                <h1>Product not found.</h1>
+                <Link to="/">Back to Products List</Link>
+            </main>
+        );
+    }
+    // 아래에는 product가 있는 경우에만 진행
+    // 다음 Step의 상세화면 return 작성
 }
